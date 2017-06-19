@@ -75,7 +75,7 @@ namespace CSharpViaTest.Collections._10_EnumerablePractices
             public bool MoveNext()
             {
                 while(enumerator.MoveNext()){
-                    if (!hashSet.Add(enumerator.Current)){
+                    if (hashSet.Add(enumerator.Current)){
                         return true;
                     }
                 }
