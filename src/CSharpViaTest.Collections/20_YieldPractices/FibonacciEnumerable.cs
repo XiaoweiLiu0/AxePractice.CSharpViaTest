@@ -31,10 +31,19 @@ namespace CSharpViaTest.Collections._20_YieldPractices
     public class FibonacciEnumerable
     {
         #region Please modifies the code to pass the test
-
         static IEnumerable<long> GetFibonacciIntegers()
         {
-            throw new NotImplementedException();
+            int first = 0;
+            int second = 1;
+            while (true){
+                if (first == 0){
+                    yield return 1L;
+                }
+                var result = first + second;
+                first = second;
+                second = result;
+                yield return result;
+            }
         }
         
         #endregion

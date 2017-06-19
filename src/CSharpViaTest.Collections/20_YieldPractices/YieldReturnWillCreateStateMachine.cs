@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Xunit;
 
 namespace CSharpViaTest.Collections._20_YieldPractices
@@ -30,11 +31,14 @@ namespace CSharpViaTest.Collections._20_YieldPractices
 
         public IEnumerable<string> GetStringTriangle(char character, int count)
         {
-            throw new NotImplementedException();
+            for(int i = 1; i <= count; i++){
+                var line = new StringBuilder();
+                line.Append(character, i);
+                yield return line.ToString();
+            }
         }
 
         #endregion
-
         [Fact]
         public void should_get_skipped_sequences()
         {
